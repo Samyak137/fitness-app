@@ -14,7 +14,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/send/mail",
+        "https://fitness-backend-mu0r.onrender.com/send/mail",
         {
           name,
           email,
@@ -35,7 +35,6 @@ const Contact = () => {
       toast.error(error.response.data.message);
     }
   };
-
 
   return (
     <section className="contact">
@@ -75,7 +74,7 @@ const Contact = () => {
             gap: "15px",
           }}
         >
-          {loading && <ClipLoader size={20} color="white"/>}
+          {loading && <ClipLoader size={20} color="white" />}
           Send Messege
         </button>
       </form>
